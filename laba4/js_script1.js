@@ -37,6 +37,8 @@ switch (day) {
     case "Неділя" :
         console.log("Сьомий день тижня")
         break
+    default:
+        console.log("Невідомий день")
 }
 
 // Завдання 4
