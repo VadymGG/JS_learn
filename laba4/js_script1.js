@@ -14,7 +14,7 @@ let N = (number % 2 == 0) ? "Парне" : "Не парне"
 console.log(N)
 
 // Завдання 3
-let day = "Середа"
+let day = "Понеділок"
 switch (day) {
     case "Понеділок" :
         console.log("Перший день тижня")
@@ -40,6 +40,7 @@ switch (day) {
 }
 
 // Завдання 4
-let password = "admin12tyjh3"
+let password = "admin123"
 let check = (password == "admin123") ? "Доступ дозволено" : "Доступ заборонено"
 console.log(check)
+
