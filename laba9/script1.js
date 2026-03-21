@@ -17,4 +17,4 @@ const I = {
 };
 
 const result = Info(I);
-console.log("Результат 5 варіанту:", result);
+console.log(result);
