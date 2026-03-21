@@ -1,6 +1,6 @@
-// Варіант №5
-// Дано масив імен. Використати find() для пошуку першого імені, що починається на "А".
-let names = ["Олег",  "Вадим", "Андрій", "Іван", "Аліса"];
+let numbers = [4, 15, 8, 10, 23, 42]; 
 
-let searh = names.find(name => name.startsWith("А"));
-console.log("Перше ім'я на 'А':", searh);
+let searh = numbers.includes(10);
+
+console.log(numbers);
+console.log("Чи є число 10?", searh);

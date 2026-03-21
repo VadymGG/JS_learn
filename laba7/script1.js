@@ -19,4 +19,9 @@ console.log(all_Messengers);
 console.log("Індекс WhatsApp:", all_Messengers.indexOf("WhatsApp")); 
 console.log("Чи є Skype?", all_Messengers.includes("Skype"));
 
+// Варіант №5
+// Дано масив імен. Використати find() для пошуку першого імені, що починається на "А"
+let names = ["Олег",  "Вадим", "Андрій", "Іван", "Аліса"];
 
+let searh = names.find(name => name.startsWith("А"));
+console.log("Перше ім'я на 'А':", searh);
