@@ -1,5 +1,5 @@
 // Доп: Дано масив слів. Використати every() для перевірки, чи всі слова довші за 3 літери.
-const words = ["apple", "banana", "kiwi", "chery"];
+const words = ["apple", "banana", "kiwi", "cherry"];
 const long3 = words.every(word => word.length > 3);
 
 console.log("Масив:", words);
