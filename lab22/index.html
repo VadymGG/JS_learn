@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Варіант 5</title>
+</head>
+<body>
+
+  <h2>Мій список</h2>
+  <ul id="myList">
+    <li>Елемент 1</li>
+    <li>Елемент 2</li>
+  </ul>
+
+  <input type="text" id="itemInput" placeholder="Введіть текст...">
+  <button onclick="addItem()">Додати елемент</button>
+
+  <script>
+    function addItem() {
+      const input = document.getElementById("itemInput");
+      const list = document.getElementById("myList");
+
+      const newItem = document.createElement("li");
+      newItem.textContent = input.value;
+
+      list.appendChild(newItem);
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>

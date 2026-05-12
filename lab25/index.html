@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Варіант 5</title>
+</head>
+<body>
+
+  <h2>Контейнер</h2>
+  <div id="container"></div>
+
+  <button onclick="addElement()">Додати елемент</button>
+
+  <script>
+    function addElement() {
+      const newEl = document.createElement("p");
+      newEl.textContent = "Новий елемент";
+
+      document.getElementById("container").appendChild(newEl);
+    }
+  </script>
+
+</body>
+</html>
