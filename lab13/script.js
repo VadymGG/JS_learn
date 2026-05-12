@@ -2,7 +2,6 @@
 const arr1 = ["a", "b"];
 const arr2 = ["c", "d"];
 
-// Копіювання масиву через spread
 const copyArr = [...arr1];
 const mArr = [...arr1, ...arr2];
 
