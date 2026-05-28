@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №28 - 5 Варіант (Візит)</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; background-color: #f4f4f9; }
+        .info-box { display: inline-block; padding: 25px; border: 2px solid #007bff; border-radius: 8px; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        span { font-weight: bold; color: #dc3545; }
+        p { font-size: 18px; }
+    </style>
+</head>
+<body>
+
+    <div class="info-box">
+        <h2>Інформація про візити</h2>
+        <p id="last-visit-text">Ви у нас вперше!</p>
+        <p>Поточний візит: <span id="current-visit" style="color: #28a745;">-</span></p>
+    </div>
+
+    <script>
+        const lastVisitDisplay = document.getElementById('last-visit-text');
+        const currentVisitDisplay = document.getElementById('current-visit');
+
+        const lastVisit = localStorage.getItem('last_visit_time');
+
+        if (lastVisit) {
+            lastVisitDisplay.innerHTML = `Ваш останній візит був: <span>${lastVisit}</span>`;
+        } else {
+            lastVisitDisplay.textContent = "Ласкаво просимо! Ви зайшли на сторінку вперше.";
+        }
+
+        const now = new Date().toLocaleString('uk-UA');
+        currentVisitDisplay.textContent = now;
+        localStorage.setItem('last_visit_time', now);
+    </script>
+
+</body>
+</html>

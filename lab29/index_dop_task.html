@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №28 - 5 Варіант</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .counter-box { display: inline-block; padding: 20px; border: 2px solid #333; border-radius: 8px; }
+        span { font-size: 24px; font-weight: bold; color: #007bff; }
+        button { margin-top: 15px; padding: 5px 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="counter-box">
+        <h2>Лічильник заходів на сторінку</h2>
+        <p>Ви зайшли на цю сторінку: <span id="views-count">0</span> раз</p>
+        <button id="reset-btn">Сккинути лічильник</button>
+    </div>
+    <script>
+        const counterDisplay = document.getElementById('views-count');
+        const resetBtn = document.getElementById('reset-btn');
+        let views = localStorage.getItem('page_views') || 0;
+
+        views = Number(views) + 1;
+        localStorage.setItem('page_views', views);
+        counterDisplay.textContent = views;
+
+        resetBtn.addEventListener('click', () => {
+        localStorage.removeItem('page_views');
+        counterDisplay.textContent = 0;
+});
+    </script>
+</body>
+</html>

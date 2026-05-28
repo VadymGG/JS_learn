@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Перевірка вихідного</title>
+</head>
+<body>
+    <h2 id="result">Завантаження...</h2>
+    <script>
+        const currentDay = new Date().getDay();
+        if (currentDay === 0 || currentDay === 6) {
+            document.getElementById('result').textContent = "Сьогодні вихідний день";
+        } else {
+            document.getElementById('result').textContent = "Сьогодні робочий день";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доп. завдання</title>
+</head>
+<body>
+    <h2>Лабораторна робота №31-32</h2>
+    <p>Натисніть <strong>F12</strong> та перейдіть у вкладку <strong>Console</strong>.</p>
+
+    <script>
+        function asyncOperation(stepName) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(`Дані з ${stepName}`);
+                }, 1500); 
+            });
+        }
+
+        async function runTasks() {
+            console.log("Запуск процесу...");
+            const result1 = await asyncOperation("Крок 1");
+            console.log("Отримано:", result1);
+
+            const result2 = await asyncOperation("Крок 2");
+            console.log("Отримано:", result2);
+
+            console.log("Всі операції успішно завершено!");
+        }
+
+        runTasks();
+    </script>
+</body>
+</html>
