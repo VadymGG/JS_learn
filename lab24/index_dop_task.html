@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Варіант 5</title>
+  <style>
+    .selected {
+      background-color: #d1e7dd;
+      color: #0f5132;
+      font-weight: bold;
+    }
+    li {
+      padding: 8px;
+      cursor: pointer;
+      list-style-type: none;
+      border-bottom: 1px solid #eee;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Список (натисніть для виділення)</h2>
+  <ul id="myList">
+    <li>Елемент 1</li>
+    <li>Елемент 2</li>
+    <li>Елемент 3</li>
+  </ul>
+  <script>
+    document.getElementById("myList").addEventListener("click", function(event) {
+      if (event.target.tagName === "LI") {
+        const active = this.querySelector(".selected");
+        if (active) active.classList.remove("selected");
+        event.target.classList.add("selected");
+      }
+    });
+  </script>
+</body>
+</html>

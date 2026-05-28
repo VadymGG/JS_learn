@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Варіант 5</title>
+</head>
+<body>
+  <h2>Cторінка</h2>
+  <div id="container"></div>
+
+  <script>
+window.addEventListener("load", function() {
+  const container = document.getElementById("container");
+  const images = [
+    "https://picsum.photos/id/10/200/150",
+    "https://picsum.photos/id/20/200/150",
+    "https://picsum.photos/id/30/200/150"
+  ] ;
+
+  images.forEach(path => {
+    const img = document.createElement("img");
+    img.src = path;
+    img.alt = "Галерея";
+    img.style.margin = "10px"; 
+    img.style.width = "200px";  
+
+    container.appendChild(img);
+  });
+});
+  </script>
+</body>
+</html>
