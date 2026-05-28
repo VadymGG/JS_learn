@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №29 - 5 Варіант</title>
+</head>
+<body>
+
+    <div id="loginForm">
+        <h2>Вхід до системи</h2>
+        <input type="text" id="username" placeholder="Введіть логін"><br><br>
+        <input type="password" id="password" placeholder="Введіть пароль (12345)"><br><br>
+        <button id="loginBtn">Увійти</button>
+    </div>
+
+    <div id="profile" style="display: none;">
+        <h2>Вітаємо, <span id="userGreeting"></span>!</h2>
+        <p>Ви успішно увійшли за допомогою пароля.</p>
+        <button id="logoutBtn">Вийти</button>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const profile = document.getElementById('profile');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const userGreeting = document.getElementById('userGreeting');
+        const loginBtn = document.getElementById('loginBtn');
+        const logoutBtn = document.getElementById('logoutBtn');
+
+        const CORRECT_PASSWORD = "12345";
+
+        const savedUser = localStorage.getItem('username');
+        if (savedUser) {
+            showProfile(savedUser);
+        }
+
+        // Клікнули "Увійти"
+        loginBtn.addEventListener('click', () => {
+            const name = usernameInput.value;
+            const pass = passwordInput.value;
+            if (name && pass === CORRECT_PASSWORD) {
+                localStorage.setItem('username', name); 
+                showProfile(name);
+            } else {
+                alert('Невірний пароль! (Спробуй: 12345)');
+            }
+        });
+
+        // Клікнули "Вийти"
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('username'); 
+            
+            profile.style.display = 'none';
+            loginForm.style.display = 'block';
+            usernameInput.value = '';
+            passwordInput.value = '';
+        });
+
+        function showProfile(name) {
+            userGreeting.textContent = name;
+            loginForm.style.display = 'none';
+            profile.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

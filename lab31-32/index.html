@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота: Асинхронність</title>
+</head>
+<body>
+    <h2>Лабораторна робота №31-32</h2>
+    <p>Натисніть <strong>F12</strong> та перейдіть у вкладку <strong>Console</strong>.</p>
+
+    <script>
+        function getRandomNumber() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const num = Math.floor(Math.random() * 100);
+                    if (num > 20) {
+                        resolve(num); // Успіх
+                    } else {
+                        reject("Число занадто мале!"); // Помилка
+                    }
+                }, 1000); 
+            });
+        }
+
+        // Спосіб А: Обробка через .then() / .catch()
+        console.log("--- Тест 1: Виклик через then/catch ---");
+        getRandomNumber()
+            .then(res => console.log("Then отримав:", res))
+            .catch(err => console.error("Catch зловив:", err))
+            .finally(() => {
+                console.log("Тест then/catch завершено.\n\n");
+
+                testAsyncAwait();
+            });
+
+        // Спосіб Б: Обробка через async / await
+        async function testAsyncAwait() {
+            console.log("--- Тест 2: Виклик через async/await ---");
+            try {
+                const res = await getRandomNumber();
+                console.log("Await отримав:", res);
+            } catch (err) {
+                console.error("Await зловив:", err);
+            } finally {
+                console.log("Тест async/await завершено.");
+            }
+        }
+    </script>
+</body>
+</html>

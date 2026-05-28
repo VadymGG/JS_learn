@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №26 - 5 Варіант</title>
+</head>
+<body>
+
+    <div id="container">
+        <button>Кнопка 1</button>
+        <button>Кнопка 2</button>
+    </div>
+
+    <div id="output">Натисніть на будь-який елемент у рамці</div>
+
+    <script>
+        const container = document.getElementById('container');
+        const output = document.getElementById('output');
+
+        container.addEventListener('click', function(event) {
+            output.textContent = "Ви натиснули на тег: " + event.target.tagName;
+        });
+    </script>
+
+</body>
+</html>
